@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create rules</title>
+</head>
+<body>
+	
+</body>
+<script>
+	//一、四种语法错误
+	//1.中文输入指令
+	var abn=233；
+	//2.少打
+	var b=;
+	//3.变量名不合法
+	var class=456;
+	//4.语句写错
+	fumction str(){
+
+	}
+	str();
+	//二、四种运行时错误
+
+	//1.ReferenceError 变量引用异常触发的错误
+	console.log(a);//Uncaught ReferenceError: a is not defined
+
+	//2.TypeError 类型使用时错误
+	var a = 1; 
+	a();    //Uncaught TypeError: a is not a function
+
+	//3.RangeError 递归爆栈时触发
+	function fn(){
+		fn()
+	}
+	fn();//Uncaught RangeError: Maximum call stack size exceeded
+
+	//4.URIError ,URIError是URI相关函数的参数不正确时抛出的错误，主要涉及这六个函数。
+	// encodeURI()
+	// decodeURI()
+	// encodeURIComponent()
+	// decodeURIComponent()
+	// escape()
+	// unescape()
+	decodeURI('%2')  // URIError: URI malformed
+</script>
+</html>
