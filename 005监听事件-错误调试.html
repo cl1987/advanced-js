@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create rules</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">求和</button>
+</body>
+<script>
+	var oTxt=document.getElementById('txt');
+	var oBtn=document.getElementById('btn');
+	function sum(num){
+	 	try{
+		 	if(isNaN(parseInt(num))){
+				throw new Error("is not a number")
+			}
+			var result=0;
+			for(var i=0; i<=num;i++){
+			 		result+=i;
+			}
+			return result;
+		}
+		catch(err){
+			console.log(err);
+		}
+		finally{
+		console.log("wdwa1")	
+		}	
+	}
+
+	 	
+	 function show(num){
+	 	return num*10;
+	 }
+	console.log("1......");
+	var total=sum(1.6)
+	console.log(total);
+	console.log("2......");
+	console.log(show(total));
+	console.log("3......");
+
+	oBtn.onclick=function(){
+		var val=oTxt.value;
+		var total=sum(val);
+		console.log(show(total))
+	}
+</script>
+</html>
