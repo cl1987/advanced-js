@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create rules</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age,){
+		this.name=name;
+		this.age=age;
+	}
+
+	Person.prototype.sayName=function(){
+		console.log("I am "+this.name)
+	}
+
+	Person.prototype.sayAge=function(){
+		console.log("I am "+this.age)
+	}
+
+	function Student(name,age,major){
+		//属性的继承
+		Person.call(this,name,age)
+		this.major=major;
+	}
+	
+	// Student.prototype=Person.prototype;
+	Student.prototype.sayMajor=function(){
+		console.log("I am from"+this.major)
+	}
+	var s1=new Student("lyc",16,"computer")
+	s1.sayName();
+	s1.sayAge();
+	s1.sayMajor();
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create rules</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age,){
+		this.name=name;
+		this.age=age;
+	}
+	var p1=new Person("lyc",18)
+	Object.defineProperties(p1,{
+		EYES:{
+			value:2,
+			enumerable:true,
+			writable:true,
+			configurable:true
+		},
+		MOUTH:{
+			value:1,
+			enumerable:true,
+			writable:true,
+			configurable:true
+		},
+		HANDS:{
+			value:2,
+			enumerable:true,
+			writable:true,
+			configurable:true
+		},
+	})
+	for(attr in p1){
+		console.log(attr,p1[attr])
+	}
+	console.log(p1)
+</script>
+</html>

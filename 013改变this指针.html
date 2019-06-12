@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create rules</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function show(n1,n2){
+		console.log(this,n1,n2)
+	}
+	show()
+	show.call({name:"lyc"},1,2)
+
+
+	show.apply({sex:"male"},[2,3])
+
+	show.bind({hobby:"sing"})(2,3)
+
+	var result=show.bind()
+	result(4,5)
+
+
+
+	show.call(null,1,2)
+	show.apply(null,[2,3])
+	show.bind(null)(2,3)
+</script>
+</html>

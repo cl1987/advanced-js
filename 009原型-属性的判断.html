@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create rules</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age,){
+		this.name=name;
+		this.age=age;
+	}
+	Person.prototype.sayName=function(){
+		console.log("I am "+this.name)
+	}
+	Person.prototype.sayAge=function(){
+		console.log("I am "+this.age)
+	}
+	Person.prototype.LEGS=2;
+	var p1=new Person("tom",18);
+	p1.sayName();
+	p1.sayAge();
+	p1.hobby="basketball";
+	p1.name="kangkang";
+	console.log(p1);
+	var p2=new Person("lyc",18);
+	console.log(p2);
+	p2.sayName();
+	p2.sayAge();
+
+	console.log(p1.hasOwnProperty('name'))
+	console.log("LEGS"in p1);
+	console.log("name"in p1);
+	function isPrototype(obj,attr){
+		return !obj.hasOwnProperty('attr')&&"attr" in obj; 
+	}
+	console.log(isPrototype( p1,name))
+</script>
+</html>
